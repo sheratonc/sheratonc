@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/banner.svg" width="100%" alt="sheranton: a beginner learning Windows and Linux internals and binary analysis, in Rust, C++, C and Python">
+  <img src="assets/banner.svg" width="100%" alt="sheraton: a beginner learning Windows and Linux internals and binary analysis, in Rust, C++, C and Python">
 </p>
 
 ## About
@@ -69,7 +69,7 @@ These are my learning projects: two small toolkits for taking binaries apart, on
   <tr>
     <td colspan="2" valign="top">
 
-### [unwind-map](https://github.com/sheranton/unwind-map)
+### [unwind-map](https://github.com/sheratonc/unwind-map)
 
 My biggest project so far. It works out where functions start and end in **stripped** Linux ELF binaries by reading the `.eh_frame` unwind tables, which `strip` can't remove. It also works when the section headers are gone, flags functions with exception handling, points out code that has no unwind info, can put symbols back with `objcopy`, exports to Ghidra and JSON, and draws the binary as a Hilbert-curve map. I checked it against `llvm-readobj`'s decoder on x86-64, x86 and AArch64 test binaries, and it found every function with unwind info without any false starts.
 
@@ -85,7 +85,7 @@ My biggest project so far. It works out where functions start and end in **strip
   <tr>
     <td width="50%" valign="top">
 
-### [pe-walker](https://github.com/sheranton/pe-walker)
+### [pe-walker](https://github.com/sheratonc/pe-walker)
 
 A command-line inspector I wrote to learn the Portable Executable format. It prints the DOS and NT headers, section layout, imports and exports.
 
@@ -98,7 +98,7 @@ pe-walker --summary app.exe
 </td>
     <td width="50%" valign="top">
 
-### [pe-diff](https://github.com/sheranton/pe-diff)
+### [pe-diff](https://github.com/sheratonc/pe-diff)
 
 Compares two PE files: headers, sections, imports and exports. It exits non-zero when something changed, so it can be used in a CI pipeline.
 
@@ -113,7 +113,7 @@ pe-diff -T old.dll new.dll
   <tr>
     <td width="50%" valign="top">
 
-### [rtti-dump](https://github.com/sheranton/rtti-dump)
+### [rtti-dump](https://github.com/sheratonc/rtti-dump)
 
 Rebuilds class hierarchies from stripped MSVC x64 binaries by following the RTTI structures: Complete Object Locator → Class Hierarchy Descriptor → Base Class Array.
 
@@ -126,7 +126,7 @@ rtti-dump --demangle app.exe
 </td>
     <td width="50%" valign="top">
 
-### [vtable-dump](https://github.com/sheranton/vtable-dump)
+### [vtable-dump](https://github.com/sheratonc/vtable-dump)
 
 A companion to rtti-dump. It finds each class's vtable through its Complete Object Locator back-reference and lists the virtual function slots.
 
@@ -141,7 +141,7 @@ vtable-dump -f exception app.exe
   <tr>
     <td colspan="2" valign="top">
 
-### [pattern-scan](https://github.com/sheranton/pattern-scan)
+### [pattern-scan](https://github.com/sheratonc/pattern-scan)
 
 A single-header C++17 library for IDA-style byte signature scanning. It uses `memchr` to find candidates before doing the full compare, which made it about 11× faster than a byte-by-byte scan in my benchmark, and a randomized test checks every result against a simple reference scanner.
 
